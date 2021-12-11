@@ -41,9 +41,9 @@ function text.framedText(x,y,txt,fcol,bcol,wrap)
   expect(6,wrap,"number","nil")
 
   if not wrap then
-    frame.frame(x-1,y-1,#text+2,3,fcol,bcol) -- Draw the frame around the window
+    frame.frame(x-1,y-1,#txt+2,3,fcol,bcol) -- Draw the frame around the window
     term.setCursorPos(x,y) -- Draw the text
-    term.blit(text,fcol:rep(#text),bcol:rep(#text))
+    term.blit(txt,fcol:rep(#txt),bcol:rep(#txt))
   else
     local lines = s.wrap(txt,wrap)
     frame.frame(x-1,y-1,wrap+2,#lines+2,fcol,bcol)
