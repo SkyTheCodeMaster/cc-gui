@@ -95,7 +95,7 @@ if fs.exists("gui/ext/button.lua") then
       term.setTextColour(cols.text)
       term.setBackgroundColour(state and cols.backOn or cols.backOff)
       for i,line in ipairs(lines) do
-        term.setCursorPos(math.ceil(((w-2)/2)-(line:len()/2)),y+i)
+        term.setCursorPos(x-1+math.ceil(((w-2)/2)-(line:len()/2)),y+i)
         term.write(line)
       end
     end
