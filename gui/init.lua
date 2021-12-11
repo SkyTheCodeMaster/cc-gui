@@ -9,8 +9,8 @@ gui.text = require("gui.text")
 gui.ext = {}
 
 local function safequire(path)
-  local m = pcall(require,path)
-  if type(m) ~= "table" or next(m) == nil then
+  local ok,m = pcall(require,path)
+  if not ok or type(m) ~= "table" or next(m) == nil then
     return nil
   end
   return m
