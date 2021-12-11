@@ -37,7 +37,6 @@ function frame.frame(x,y,w,h,fcol,bcol)
   local botfg = bcol:rep(w)
   local botbg = fcol:rep(w)
 
-
   term.setCursorPos(x,y)
   term.blit(top,topfg,topbg)
   term.setCursorPos(x,y+h-1)
