@@ -19,7 +19,7 @@ end
 for _,ext in pairs(fs.list("gui/ext")) do
   local m = safequire("gui.ext."..ext:match("(.+)%..+"))
   if m then
-    gui.ext[ext] = m
+    gui.ext[ext:match("(.+)%..+")] = m
   end
 end
 
