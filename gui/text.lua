@@ -20,7 +20,7 @@ function text.text(x,y,txt,fcol,bcol)
   if type(bcol)=="number"then bcol=colours.toBlit(bcol)end
 
   term.setCursorPos(x,y)
-  term.blit(text)
+  term.blit(txt,fcol:rep(txt:len()),bcol:rep(txt:len()))
 end
 
 --- Draw a frame around the text. The x/y coordinates is where the text starts, and the frame is drawn around it.
