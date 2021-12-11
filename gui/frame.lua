@@ -84,7 +84,7 @@ if fs.exists("gui/ext/button.lua") then
     end
     expect(6,text,"string")
     expect(7,func,"function")
-    expect(8,state,"boolean")
+    expect(8,state,"boolean","nil")
     if state == nil then state = false end
 
     local lines = s.wrap(text,w-2)
@@ -92,11 +92,9 @@ if fs.exists("gui/ext/button.lua") then
       table.remove(lines,6)
     end
     local function drawText()
-      term.setTextColour(cols.text)
-      term.setBackgroundColour(state and cols.backOn or cols.backOff)
       for i,line in ipairs(lines) do
-        term.setCursorPos(x-1+math.ceil(((w-2)/2)-(line:len()/2)),y+i)
-        term.write(line)
+        term.setCursorPos(x-1+math.ceil(((w-2)/2)),y+i)
+        term.blit(line,colours.toBlit(cols.text):rep(#line),colours.toBlit(state and cols.backOn or cols.backOff):rep(#line))
       end
     end
 
