@@ -52,15 +52,15 @@ end
 if fs.exists("gui/ext/button.lua") then
   local button = require("gui.ext.button")
   --- Draws a clickable button with text inside. The button toggles when you click it. This requires the `button` extension to be installed.
--- @tparam number x X coordinate of the button.
--- @tparam number y Y coordinate of the button.
--- @tparam number w Width of the button.
--- @tparam number h Height of the button.
--- @tparam {borderOn=number,borderOff=number,backOn=number,backOff=number,text=number} cols Colours of the button when it is on or off. 
--- @tparam string text The text that is centered (and wrapped) in the button.
--- @tparam function func The function that is ran when the button is toggled, with a state argument.
--- @tparam[opt=false] boolean state The starting state of the button, defaults to off.
--- @treturn string The ID of the button.
+  -- @tparam number x X coordinate of the button.
+  -- @tparam number y Y coordinate of the button.
+  -- @tparam number w Width of the button.
+  -- @tparam number h Height of the button.
+  -- @tparam {borderOn=number,borderOff=number,backOn=number,backOff=number,text=number} cols Colours of the button when it is on or off. 
+  -- @tparam string text The text that is centered (and wrapped) in the button.
+  -- @tparam function func The function that is ran when the button is toggled, with a state argument.
+  -- @tparam[opt=false] boolean state The starting state of the button, defaults to off.
+  -- @treturn string The ID of the button.
   function frame.button(x,y,w,h,cols,text,func,state)
     -- standard argument checking
     expect(1,x,"number")
