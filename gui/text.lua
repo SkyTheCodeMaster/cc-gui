@@ -53,3 +53,5 @@ function text.framedText(x,y,txt,fcol,bcol,wrap)
     end
   end
 end
+
+return text
