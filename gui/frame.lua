@@ -43,7 +43,7 @@ function frame.frame(x,y,w,h,fcol,bcol)
   term.setCursorPos(x,y+h-1)
   term.blit(bot,botfg,botbg)
   term.setCursorPos(x,y)
-  for i=1,h-1 do
+  for i=1,h-2 do
     term.setCursorPos(x,y+i)
     term.blit(mid,midfg,midbg)
   end
