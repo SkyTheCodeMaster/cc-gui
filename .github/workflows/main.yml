@@ -18,6 +18,13 @@ jobs:
         test -d bin || mkdir bin
         test -f bin/illuaminate || wget -q -Obin/illuaminate https://squiddev.cc/illuaminate/linux-x86-64/illuaminate
         chmod +x bin/illuaminate
+    - name: Setup Python
+      run: |
+        python -m pip install --upgrade pip
+        pip install aiohttp
+    - name: Run Python scripts
+      run: |
+        python download.py
     - name: Generate documentation
       run: |
         bin/illuaminate doc-gen
