@@ -92,4 +92,50 @@ function shape.filledTriangle(x,y,w,h,col)
   end
 end
 
+--- Draws a circle.
+-- @tparam number x The center X of the circle.
+-- @tparam number y The center Y of the circle.
+-- @tparam number radius Radius of the circle in pixels.
+-- @tparam number colour Colour of the circle.
+function shape.circle(centerX,centerY,radius,colour)
+  local x1 = centerX - radius
+  local y1 = centerY - radius
+  local x2 = centerX + radius
+  local y2 = centerY + radius
+  
+  for y=y1,y2 do
+    for x=x1,x2 do
+	  local distX = x-centerX
+	  local distY = y-centerY
+	  local distance = math.sqrt(distX*distX + distY*distY)
+	  if distance == radius or (distance >= radius-0.25 and distance <= radius+0.75) then
+	    paintutils.drawPixel(x,y,colour)
+	  end
+	end
+  end
+end
+
+--- Draws a filled circle.
+-- @tparam number x The center X of the circle.
+-- @tparam number y The center Y of the circle.
+-- @tparam number radius Radius of the circle in pixels.
+-- @tparam number colour Colour of the circle.
+function shape.filledCircle(centerX,centerY,radius,colour)
+  local x1 = centerX - radius
+  local y1 = centerY - radius
+  local x2 = centerX + radius
+  local y2 = centerY + radius
+  
+  for y=y1,y2 do
+    for x=x1,x2 do
+      local distX = x-centerX
+      local distY = y-centerY
+      local distance = math.sqrt(distX*distX + distY*distY)
+      if distance <= radius then
+        paintutils.drawPixel(x,y,colour)
+      end
+    end
+  end
+end
+
 return shape

@@ -1,7 +1,7 @@
 ; -*- mode: Lisp;-*-
 
 (sources
-  /gui/
+  /src/main/gui/
 )
 
 
