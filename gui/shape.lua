@@ -50,4 +50,28 @@ function shape.rectangle(x,y,w,h,col)
   end
 end
 
+--- Draw a hollow triangle. The X/Y is the top left of the triangle "box", and the W/H is the width and height of it. The bottomleft of the triangle is (x,y+h-1), bottom right is (x+w-1,y+h-1), and the top is (x+w/2,y)
+-- @tparam number x X coordinate of the triangle.
+-- @tparam number y Y coordinate of the triangle.
+-- @tparam number w Width of the triangle.
+-- @tparam number h Height of the triangle.
+-- @tparam number col Colour of the triangle.
+function shape.triangle(x,y,w,h,col)
+  expect(1,x,"number")
+  expect(2,y,"number")
+  expect(3,w,"number")
+  expect(4,h,"number")
+  expect(5,col,"number")
+
+  local oX,oY = term.getCursorPos()
+  local oCol = term.getBackgroundColour() -- restore stuff after painutils
+
+  paintutils.drawLine(x,y+h-1, x+math.floor(w/2),y, col)
+  paintutils.drawLine(x+w-1,y+h-1, x+math.floor(w/2),y, col)
+  paintutils.drawLine(x,y+h-1, x+w-1,y+h-1, col)
+
+  term.setCursorPos(oX,oY)
+  term.setBackgroundColour(oCol)
+end
+
 return shape
