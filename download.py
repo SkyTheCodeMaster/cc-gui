@@ -18,7 +18,7 @@ async def main():
         text = await resp.text()
         print("got",k,"writing to file.")
         try:
-          with open(v["path"],"w") as f:
+          with open(f"src/main/{v['path']}","w") as f:
             f.write(text)
             print("wrote to file")
             downloaded.append(v["path"])
