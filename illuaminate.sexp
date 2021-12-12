@@ -83,3 +83,12 @@
     )
   )
 )
+
+(at
+  (
+    gui/init.lua
+  )
+  (
+    doc -all
+  )
+)
