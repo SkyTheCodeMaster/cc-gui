@@ -19,4 +19,4 @@ for file in downloads:
       w.write("\n".join(lines))
 
 # remove init.lua from being documented
-os.remove("gui/init.lua")
+os.remove("src/main/gui/init.lua")
