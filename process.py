@@ -2,7 +2,7 @@
 import json
 import re
 
-with open("downloaded") as f:
+with open("downloaded.json") as f:
   downloads = json.loads(f.read())
   print(downloads)
 
