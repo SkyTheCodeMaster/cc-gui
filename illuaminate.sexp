@@ -2,7 +2,6 @@
 
 (sources
   /gui/
-  -/gui/init.lua
 )
 
 
