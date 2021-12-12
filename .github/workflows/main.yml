@@ -25,6 +25,7 @@ jobs:
     - name: Run Python scripts
       run: |
         python download.py
+        python process.py
     - name: Generate documentation
       run: |
         bin/illuaminate doc-gen
