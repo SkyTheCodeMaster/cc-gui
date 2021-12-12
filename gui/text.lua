@@ -1,9 +1,10 @@
 --- Draw various texts on the screen.
+local text = {}
+
 local frame = require("gui.frame")
 local expect = require("cc.expect").expect
 local s = require("cc.strings")
 
-local text = {}
 
 --- Draw a string at the X/Y coordinates
 -- @tparam number x X coordinate of the text.
