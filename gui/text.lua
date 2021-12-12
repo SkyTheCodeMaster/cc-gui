@@ -1,3 +1,4 @@
+--- Draw various texts on the screen.
 local frame = require("gui.frame")
 local expect = require("cc.expect").expect
 local s = require("cc.strings")

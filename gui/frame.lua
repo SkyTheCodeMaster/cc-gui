@@ -1,3 +1,4 @@
+--- Boxes with drawing character frames around them. Also a button!
 local frame = {}
 
 local expect = require("cc.expect").expect

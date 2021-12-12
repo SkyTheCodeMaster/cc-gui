@@ -1,3 +1,4 @@
+--- Draw various shapes on the screen.
 local shape = {}
 
 local expect = require("cc.expect").expect

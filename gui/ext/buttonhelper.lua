@@ -1,3 +1,4 @@
+--- Helper button functions.
 local bh = {}
 
 if not fs.exists("gui/ext/button.lua") then
