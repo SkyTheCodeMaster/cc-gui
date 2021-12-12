@@ -1,3 +1,4 @@
+# Download extensions
 import asyncio
 import json
 
@@ -8,6 +9,7 @@ with open("requirements.json") as f:
 
 async def main():
   async with aiohttp.ClientSession() as session:
+    downloaded = []
     for k,v in requirements.items():
       if v["folder"]: 
         print(k,"is a folder, skipping.")
@@ -15,8 +17,14 @@ async def main():
       async with session.get(k) as resp:
         text = await resp.text()
         print("got",k,"writing to file.")
-        with open(v["path"],"w") as f:
-          f.write(text)
-          print("wrote to file")
+        try:
+          with open(v["path"],"w") as f:
+            f.write(text)
+            print("wrote to file")
+            downloaded.append(v["path"])
+        except Exception as e:
+          print("Error",e)
+    with open("downloaded.json","w") as f:
+      f.write(json.dumps(downloaded))
 
 asyncio.run(main())
