@@ -1,5 +1,6 @@
 # Strip module tags
 import json
+import os
 import re
 
 with open("downloaded.json") as f:
@@ -16,3 +17,6 @@ for file in downloads:
     print("writing",file)
     with open(file,"w") as w:
       w.write("\n".join(lines))
+
+# remove init.lua from being documented
+os.remove("gui/init.lua")
