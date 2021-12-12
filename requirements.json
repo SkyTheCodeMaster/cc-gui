@@ -1,5 +1,5 @@
 {
-  "https://github.com/SkyTheCodeMaster/cc-gui/tree/master/gui": {
+  "https://github.com/SkyTheCodeMaster/cc-gui/tree/master/src/main/gui": {
     "path": "gui",
     "folder": true,
     "recursive": true
