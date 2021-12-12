@@ -74,4 +74,22 @@ function shape.triangle(x,y,w,h,col)
   term.setBackgroundColour(oCol)
 end
 
+--- Draw a filled triangle. This has no gauruntee of working correctly.
+-- @tparam number x X coordinate of the triangle.
+-- @tparam number y Y coordinate of the triangle.
+-- @tparam number w Width of the triangle.
+-- @tparam number h Height of the triangle.
+-- @tparam number col Colour of the triangle.
+function shape.filledTriangle(x,y,w,h,col)
+  expect(1,x,"number")
+  expect(2,y,"number")
+  expect(3,w,"number")
+  expect(4,h,"number")
+  expect(5,col,"number")
+
+  for i=1,math.floor(h/2) do
+    shape.triangle(x+i,y+i,w-i,h-i,col)
+  end
+end
+
 return shape
