@@ -2,6 +2,7 @@
 
 (sources
   /gui/
+  -/gui/init.lua
 )
 
 
@@ -81,14 +82,5 @@
       window
       _HOST
     )
-  )
-)
-
-(at
-  (
-    gui/init.lua
-  )
-  (
-    docs -all
   )
 )
