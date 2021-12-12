@@ -21,7 +21,7 @@ async def main():
           with open(f"src/main/{v['path']}","w") as f:
             f.write(text)
             print("wrote to file")
-            downloaded.append(v["path"])
+            downloaded.append(f"src/main/{v['path']}")
         except Exception as e:
           print("Error",e)
     with open("downloaded.json","w") as f:
