@@ -89,6 +89,6 @@
     gui/init.lua
   )
   (
-    doc -all
+    docs -all
   )
 )
