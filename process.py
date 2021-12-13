@@ -8,11 +8,11 @@ with open("downloaded.json") as f:
   print(downloads)
 
 def getLine(line:str):
-  match = re.match("-- @module\[kind=.*?\] (.*)")
-  if not re.match("-- @module\[kind=.*?\] .*",line):
+  match = re.match("-- @module\[kind=.*?\] (.*)",line)
+  if not match:
     return line
   else:
-    return "-- @module[kind=ext]"
+    return f"-- @module[kind=ext] {match.group(1)}"
 
 for file in downloads:
   print("opening",file)
