@@ -123,10 +123,10 @@ function shape.filledEllipses(centerX,centerY,width,height,colour)
   
   for y=y1,y2 do
     for x=x1,x2 do
-	  if ((x-centerX)^2/(width/2)^2) + ((y-centerY)^2/(height/2)^2) <= 1 then
-	    paintutils.drawPixel(x,y,colour)
+	    if ((x-centerX)^2/(width/2)^2) + ((y-centerY)^2/(height/2)^2) <= 1 then
+	      paintutils.drawPixel(x,y,colour)
+	    end
 	  end
-	end
   end
 end
 
