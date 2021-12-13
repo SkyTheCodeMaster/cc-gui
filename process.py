@@ -7,13 +7,19 @@ with open("downloaded.json") as f:
   downloads = json.loads(f.read())
   print(downloads)
 
-def canRemove(line:str):
-  return re.match("-- @module\[kind=.*?\] .*",line)
+def getLine(line:str):
+  match = re.match("-- @module\[kind=.*?\] (.*)")
+  if not re.match("-- @module\[kind=.*?\] .*",line):
+    return line
+  else:
+    return "-- @module[kind=ext]"
 
 for file in downloads:
   print("opening",file)
   with open(file) as r:
-    lines = [line for line in r if not canRemove(line)]
+    lines = []
+    for line in r:
+      lines.append(getLine(line))
     print("writing",file)
     with open(file,"w") as w:
       w.write("\n".join(lines))

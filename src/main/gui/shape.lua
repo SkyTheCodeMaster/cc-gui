@@ -115,26 +115,22 @@ function shape.circle(centerX,centerY,radius,colour)
   end
 end
 
---- Draws a filled circle.
--- @tparam number x The center X of the circle.
--- @tparam number y The center Y of the circle.
--- @tparam number radius Radius of the circle in pixels.
--- @tparam number colour Colour of the circle.
-function shape.filledCircle(centerX,centerY,radius,colour)
-  local x1 = centerX - radius
-  local y1 = centerY - radius
-  local x2 = centerX + radius
-  local y2 = centerY + radius
+--- Draws a filled ellipses.
+-- @tparam number x The center X of the ellipses.
+-- @tparam number y The center Y of the ellipses.
+-- @tparam number width Width of the ellipses in pixels.
+-- @tparam number height Height of the ellipses in pixels.
+-- @tparam number colour Colour of the ellipses.
+function shape.filledEllipses(centerX,centerY,width,height,colour)
+  local x1,y1 = centerX-math.floor(width/2), centerY-math.floor(height/2)
+  local x2,y2 = centerX+math.ceil(width/2), centerY+math.ceil(height/2)
   
   for y=y1,y2 do
     for x=x1,x2 do
-      local distX = x-centerX
-      local distY = y-centerY
-      local distance = math.sqrt(distX*distX + distY*distY)
-      if distance <= radius then
-        paintutils.drawPixel(x,y,colour)
-      end
-    end
+	  if ((x-centerX)^2/(width/2)^2) + ((y-centerY)^2/(height/2)^2) <= 1 then
+	    paintutils.drawPixel(x,y,colour)
+	  end
+	end
   end
 end
 
