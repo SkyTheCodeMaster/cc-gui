@@ -1,4 +1,5 @@
 --- Boxes with drawing character frames around them. Also a button!
+-- @module[kind=gui] Frame
 local frame = {}
 
 local expect = require("cc.expect").expect

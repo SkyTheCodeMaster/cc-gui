@@ -1,4 +1,5 @@
 --- Draw various shapes on the screen.
+-- @module[kind=gui] Shape
 local shape = {}
 
 local expect = require("cc.expect").expect

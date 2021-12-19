@@ -1,4 +1,5 @@
 --- Helper button functions.
+-- @module[kind=ext] buttonhelper
 local bh = {}
 
 if not fs.exists("gui/ext/button.lua") then

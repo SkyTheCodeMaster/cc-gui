@@ -2,6 +2,7 @@
 
 (sources
   /src/main/gui/
+  /src/ext/
 )
 
 
@@ -22,10 +23,12 @@
 
   (module-kinds
     (gui GUI)
+    (ext Extension)
   )
 
   (library-path
-    /gui/
+    /src/main/gui/
+    /src/ext/
   )
 )
 

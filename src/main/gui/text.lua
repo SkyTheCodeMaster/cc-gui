@@ -1,4 +1,5 @@
 --- Draw various texts on the screen.
+-- @module[kind=gui] Text
 local text = {}
 
 local frame = require("gui.frame")
