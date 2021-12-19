@@ -4,6 +4,7 @@ local gui = {}
 gui.frame = require("gui.frame")
 gui.shape = require("gui.shape")
 gui.text = require("gui.text")
+gui.window = require("gui.window")
 
 -- extensions (button, progressbar)
 gui.ext = {}
